@@ -64,11 +64,11 @@ def main():
 
     # ------------- Sidebar: Settings ------------- #
     st.sidebar.header("設定")
-    if st.sidebar.button("⚠️ データを全削除"):
-        if st.sidebar.checkbox("本当に削除しますか？"):
-            data["records"].clear()
-            save_data(data)
-            st.sidebar.success("全ての記録を削除しました。")
+    confirm_delete = st.sidebar.checkbox("本当に削除しますか？")
+    if st.sidebar.button("⚠️ データを全削除") and confirm_delete:
+        data["records"].clear()
+        save_data(data)
+        st.sidebar.success("全ての記録を削除しました。")
 
 
 if __name__ == "__main__":
