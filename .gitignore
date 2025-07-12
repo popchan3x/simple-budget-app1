@@ -1,0 +1,9 @@
+# 仮想環境
+.venv/
+__pycache__/
+
+# Streamlit キャッシュ
+.streamlit/
+
+# アプリが生成するデータ
+budget_data.json
