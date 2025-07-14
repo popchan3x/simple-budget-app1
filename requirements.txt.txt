@@ -1,5 +1,0 @@
-streamlit>=1.35.0
-pandas>=2.2.2
-matplotlib>=3.8.4
-supabase-py>=2.2.0  # Supabase を使わないならこの行と次行は不要
-httpx>=0.27.0
