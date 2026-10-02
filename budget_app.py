@@ -21,6 +21,17 @@ def save_data(data):
         json.dump(data, f, ensure_ascii=False, indent=2)
 
 
+def delete_records():
+    """Delete records only after confirmation, before the next render."""
+    if not st.session_state.get("confirm_delete", False):
+        return
+    data = load_data()
+    data["records"].clear()
+    save_data(data)
+    st.session_state["confirm_delete"] = False
+    st.session_state["delete_succeeded"] = True
+
+
 def main():
     st.title("📝 簡単家計簿アプリ")
 
@@ -64,10 +75,9 @@ def main():
 
     # ------------- Sidebar: Settings ------------- #
     st.sidebar.header("設定")
-    confirm_delete = st.sidebar.checkbox("本当に削除しますか？")
-    if st.sidebar.button("⚠️ データを全削除") and confirm_delete:
-        data["records"].clear()
-        save_data(data)
+    st.sidebar.checkbox("本当に削除しますか？", key="confirm_delete")
+    st.sidebar.button("⚠️ データを全削除", on_click=delete_records)
+    if st.session_state.pop("delete_succeeded", False):
         st.sidebar.success("全ての記録を削除しました。")
 
 

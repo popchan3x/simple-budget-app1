@@ -15,3 +15,4 @@ streamlit run budget_app.py
 
 ![アプリのスクリーンショット](assets/assets/screenshot.png)
 
+![アプリのスクリーンショット](assets/assets/screenshot_20250714.png)
