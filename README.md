@@ -11,7 +11,8 @@ pip install -r requirements.txt
 
 # アプリ起動
 streamlit run budget_app.py
+```
 
-![アプリのスクリーンショット](assets/screenshot.png)
+![アプリのスクリーンショット](assets/assets/screenshot.png)
 
-![アプリのスクリーンショット](assets/screenshot_20250714.png)
+![アプリのスクリーンショット](assets/assets/screenshot_20250714.png)
